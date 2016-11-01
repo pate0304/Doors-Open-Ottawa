@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.algonquincollege.hurdleg.planets.model.Planet;
 
 /**
- * Purpose: custom the Planet cell for each planet displayed the ListActivity.
+ * Purpose: customize the Planet cell for each planet displayed in the ListActivity (i.e. MainActivity).
  * Usage:
  *   1) extend from class ArrayAdapter<YourModelClass>
  *   2) @override getView( ) :: decorate the list cell
