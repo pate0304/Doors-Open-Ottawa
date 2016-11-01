@@ -10,7 +10,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.algonquincollege.hurdleg.planets.model.Planet;
@@ -34,7 +33,6 @@ public class MainActivity extends ListActivity {
     // URL to my RESTful API Service hosted on my Bluemix account.
     public static final String REST_URI = "https://planets-hurdleg.mybluemix.net/planets";
 
-    private TextView output;
     private ProgressBar pb;
     private List<MyTask> tasks;
 
