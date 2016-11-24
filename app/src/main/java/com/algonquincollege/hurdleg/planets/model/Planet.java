@@ -1,5 +1,9 @@
 package com.algonquincollege.hurdleg.planets.model;
 
+import android.graphics.Bitmap;
+
+import java.util.List;
+
 /**
  * Model a planet of our solar system.
  *
@@ -27,6 +31,12 @@ public class Planet {
     private String description;
     private double distanceFromSun;
     private int numberOfMoons;
+    private List<String> cal;
+    private Bitmap bitmap;
+    private String address;
+
+    public String getAddress(){return address;}
+    public void setAddress(String address){this.address = address;}
 
     public int getPlanetId() { return planetId; }
     public void setPlanetId(int planetId) { this.planetId = planetId; }
@@ -40,6 +50,17 @@ public class Planet {
     public String getImage() { return image; }
     public void setImage(String image) { this.image = image; }
 
+
+    public List<String> getCal() {
+        return cal;
+    }
+
+    public void setCal(List<String> cal) {
+        this.cal = cal;
+    }
+
+    public Bitmap getBitmap() { return bitmap; }
+    public void setBitmap(Bitmap bitmap) { this.bitmap = bitmap; }
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
 
@@ -48,4 +69,6 @@ public class Planet {
 
     public int getNumberOfMoons() { return numberOfMoons;}
     public void setNumberOfMoons(int numberOfMoons) { this.numberOfMoons = numberOfMoons; }
+
+
 }

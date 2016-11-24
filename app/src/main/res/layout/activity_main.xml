@@ -6,17 +6,21 @@
     android:layout_height="match_parent"
     tools:context="com.algonquincollege.hurdleg.planets.MainActivity">
 
-    <ListView
-        android:id="@android:id/list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
-
     <ProgressBar
         android:id="@+id/progressBar1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:visibility="invisible" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        style="@android:style/Widget.DeviceDefault.ExpandableListView"
+        android:background="@color/wallet_dim_foreground_disabled_holo_dark">
+    </ListView>
 
 </RelativeLayout>
