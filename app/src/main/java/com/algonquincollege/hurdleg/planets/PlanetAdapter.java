@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -36,6 +37,7 @@ import static android.content.ContentValues.TAG;
  * @author Gerald.Hurdle@AlgonquinCollege.com
  *
  * Reference: based on DisplayList in "Connecting Android Apps to RESTful Web Services" with David Gassner
+ * Edited by Jay
  */
 public class PlanetAdapter extends ArrayAdapter<Planet> {
 
@@ -107,9 +109,10 @@ public class PlanetAdapter extends ArrayAdapter<Planet> {
                 String imageUrl = MainActivity.IMAGES_BASE_URL + planet.getImage();
                 InputStream in = (InputStream) new URL(imageUrl).getContent();
                 Bitmap bitmap = BitmapFactory.decodeStream(in);
-                planet.setBitmap(bitmap);
+                Bitmap finalbitmap = getResizedBitmap(bitmap,200,200);
+                planet.setBitmap(finalbitmap);
                 in.close();
-                container.bitmap = bitmap;
+                container.bitmap = finalbitmap;
                 return container;
             } catch (Exception e) {
                 e.printStackTrace();
@@ -118,13 +121,35 @@ public class PlanetAdapter extends ArrayAdapter<Planet> {
             return null;
         }
 
+
+
         @Override
         protected void onPostExecute(PlanetAndView result) {
-            ImageView image = (ImageView) result.view.findViewById(R.id.imageView1);
-            image.setImageBitmap(result.bitmap);
-            result.planet.setBitmap(result.bitmap);
-        }
+            try {
+                ImageView image = (ImageView) result.view.findViewById(R.id.imageView1);
+                image.setImageBitmap(result.bitmap);
+                result.planet.setBitmap(result.bitmap);
+            }catch(Exception e){
+                e.printStackTrace();
+
+            }
+            }
     }
 
+    //Resize the images for the view to prevent size error
+    public static Bitmap getResizedBitmap(Bitmap image, int newHeight, int newWidth) {
+        int width = image.getWidth();
+        int height = image.getHeight();
+        float scaleWidth = ((float) newWidth) / width;
+        float scaleHeight = ((float) newHeight) / height;
+        // create a matrix for the manipulation
+        Matrix matrix = new Matrix();
+        // resize the bit map
+        matrix.postScale(scaleWidth, scaleHeight);
+        // recreate the new Bitmap
+        Bitmap resizedBitmap = Bitmap.createBitmap(image, 0, 0, width, height,
+                matrix, false);
+        return resizedBitmap;
+    }
 
 }

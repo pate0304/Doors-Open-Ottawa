@@ -22,6 +22,7 @@ import java.util.List;
  *          Canvas > Modules > Resources > How to Generate Getters and Setters
  *
  * @author Gerald.Hurdle@AlgonquinCollege.com
+ * Refracted by Jay Patel(pate0304@algonquinlive.com
  */
 public class Planet {
     private int planetId;
@@ -29,8 +30,7 @@ public class Planet {
     private String overview;
     private String image;
     private String description;
-    private double distanceFromSun;
-    private int numberOfMoons;
+
     private List<String> cal;
     private Bitmap bitmap;
     private String address;
@@ -64,11 +64,6 @@ public class Planet {
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
 
-    public double getDistanceFromSun() { return distanceFromSun; }
-    public void setDistanceFromSun(double distanceFromSun) { this.distanceFromSun = distanceFromSun; }
-
-    public int getNumberOfMoons() { return numberOfMoons;}
-    public void setNumberOfMoons(int numberOfMoons) { this.numberOfMoons = numberOfMoons; }
 
 
 }

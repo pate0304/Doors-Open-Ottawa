@@ -4,24 +4,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buildingName"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:textSize="18sp"
-        android:textStyle="normal|bold"
-        android:textAlignment="center"
-        tools:ignore="HardcodedText" />
-
-    <ListView
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
     <fragment
         android:id="@+id/map"
      android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -30,28 +12,51 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_height="350dp" />
+        android:layout_height="250dp" />
 
     <TextView
         android:text="@string/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buildingName"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:id="@+id/buildingDescr"
-        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/buildingName"
         android:layout_alignParentStart="true"
-        android:textAlignment="textStart" />
+        android:layout_marginLeft="3dp"
+        android:textAlignment="viewStart" />
+
+
+    <TextView
+        android:text="Open Hours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/time"
+        android:layout_above="@+id/cal"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="33dp"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buildingDescr"
-        android:layout_marginTop="11dp"
         android:id="@+id/cal"
+        android:textAlignment="center"
+        android:layout_above="@+id/map"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="13dp"
+        android:id="@+id/progressBar2" />
+
 </RelativeLayout>
 
 <!---<fragment xmlns:android="http://schemas.android.com/apk/res/android"

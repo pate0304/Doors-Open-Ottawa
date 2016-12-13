@@ -10,5 +10,6 @@ public class Constants {
     public static final String  detail_address = "com.algonquincollege.hurdleg.planets.detail_address";
     public static final String  detail_description = "com.algonquincollege.hurdleg.planets.detail_description";
     public static final String  detail_calendar = "com.algonquincollege.hurdleg.planets.detail_calendar";
+    public static final String  bid = "com.algonquincollege.hurdleg.planets.bid";
 
 }

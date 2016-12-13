@@ -7,5 +7,9 @@
     <string name="about">About</string>
     <string name="title_activity_detail">Map</string>
     <string name="textview">TextView</string>
+    <string name="building_name">Building Name</string>
+    <string name="building_address">Building Address</string>
+    <string name="bulding_description">Bulding Description</string>
+    <string name="button">Button</string>
 
 </resources>

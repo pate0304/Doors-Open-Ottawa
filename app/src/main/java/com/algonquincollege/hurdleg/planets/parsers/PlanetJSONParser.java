@@ -38,22 +38,19 @@ public class PlanetJSONParser {
                 planet.setName(obj.getString("name"));
                 planet.setImage(obj.getString("image"));
                 planet.setAddress(obj.getString("address"));
-
+                planet.setPlanetId(obj.getInt("buildingId"));
                 List<String> listOpenHours = new ArrayList<>();
 
                 JSONArray openhours = new JSONArray(obj.getString("open_hours"));
                 for (int j = 0; j < openhours.length(); j++) {
-                    listOpenHours.add(openhours.get(j).toString());
+//                    listOpenHours.add(openhours.get(j).toString());
+                    JSONObject dateobj = openhours.getJSONObject(j);
+                    //get the date of the string LIST
+                    listOpenHours.add(dateobj.getString("date"));
+
                 }
                 planet.setCal(listOpenHours);
-//                planet.setPlanetId(obj.getInt("planetId"));
-//                planet.setName(obj.getString("name"));
-//                planet.setOverview(obj.getString("overview"));
-//                planet.setImage(obj.getString("image"));
                 planet.setDescription(obj.getString("description"));
-//                planet.setDistanceFromSun(obj.getDouble("distance_from_sun"));
-//                planet.setNumberOfMoons(obj.getInt("number_of_moons"));
-
                 planetList.add(planet);
             }
 
