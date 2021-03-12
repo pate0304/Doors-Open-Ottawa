@@ -1,5 +1,5 @@
 ## Display List ##
-  Displaying web service data in a a ListActivity.
+  Displaying web service data in a ListActivity.
 
 ## Source Code ##
 
